@@ -2,7 +2,7 @@
 
 Bare-metal / BMC operational skills and skill corrections gathered while
 bringing up an HPE ProLiant DL360p Gen8 (iLO4 v2.82) with openSUSE Leap 16.0.
-Verified against real hardware (host dl360-1, iLO4 v2.82 Feb 06 2023).
+Verified against real HPE ProLiant Gen8 hardware (iLO4 v2.82).
 No credentials are included in this repository.
 
 ## Contents
@@ -14,17 +14,18 @@ No credentials are included in this repository.
 - skills/bmc-html5-kvm-addendum/README.md - proposed corrections to the
   installed bmc-html5-kvm skill, which documents iLO5 only.
 
-## Intended remote
+## Remote
 
 https://github.com/dmbyte/agent-skills
 
-## How to publish (credentials required, currently absent here)
+## How to contribute
 
 ```bash
-cd /project/agent-skills
-git remote add origin git@github.com/dmbyte/agent-skills.git
-git push -u origin main
+git clone https://github.com/dmbyte/agent-skills.git
+# add or correct a skill under skills/<name>/SKILL.md
+git commit -am "..." && git push
 ```
 
-This environment has no gh CLI, no GITHUB_TOKEN and no SSH key, so no push
-was attempted; anonymous ls-remote reports "Repository not found".
+Keep secrets out of this repository: no BMC passwords, no IP plans, no key
+material, no password hashes. Use placeholders such as `<ilo4>` and refer to
+where a credential lives instead of inlining it.
